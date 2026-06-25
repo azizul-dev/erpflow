@@ -20,7 +20,7 @@ const SupplierEdit = () => {
         reset(data);
       } catch (error) {
         toast.error('Failed to load supplier data');
-        navigate('/suppliers');
+        navigate('/dashboard/suppliers');
       } finally {
         setLoading(false);
       }
@@ -33,7 +33,7 @@ const SupplierEdit = () => {
       setIsSubmitting(true);
       await supplierService.updateSupplier(id, data);
       toast.success('Supplier updated successfully');
-      navigate('/suppliers');
+      navigate('/dashboard/suppliers');
     } catch (error) {
       toast.error(error.message || 'Failed to update supplier');
     } finally {
@@ -90,7 +90,7 @@ const SupplierEdit = () => {
           <div className="flex justify-end space-x-3 mt-6">
             <button
               type="button"
-              onClick={() => navigate('/suppliers')}
+              onClick={() => navigate('/dashboard/suppliers')}
               className="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
               Cancel
