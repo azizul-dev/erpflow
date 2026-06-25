@@ -34,7 +34,7 @@ const SaleList = () => {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Sales</h1>
         <Link
-          to="/sales/add"
+          to="/dashboard/sales/add"
           className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
         >
           <Plus className="w-4 h-4 mr-2" />
@@ -89,7 +89,7 @@ const SaleList = () => {
               {sales.length === 0 && (
                 <tr>
                   <td colSpan="5" className="px-6 py-8 text-center text-sm text-gray-500">
-                    No sales found. <Link to="/sales/add" className="text-blue-600 hover:underline">Record your first sale.</Link>
+                    No sales found. <Link to="/dashboard/sales/add"    className="text-blue-600 hover:underline">Record your first sale.</Link>
                   </td>
                 </tr>
               )}

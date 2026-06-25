@@ -44,7 +44,7 @@ const SupplierList = () => {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Suppliers</h1>
         <Link
-          to="/suppliers/add"
+          to="/dashboard/suppliers/add"
           className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
         >
           <Plus className="w-4 h-4 mr-2" />
@@ -80,7 +80,7 @@ const SupplierList = () => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <Link
-                    to={`/suppliers/edit/${supplier._id}`}
+                    to={`/dashboard/suppliers/edit/${supplier._id}`}
                     className="text-indigo-600 hover:text-indigo-900 mr-4"
                   >
                     <Edit className="w-4 h-4 inline" />

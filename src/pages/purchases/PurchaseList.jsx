@@ -32,7 +32,7 @@ const PurchaseList = () => {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Purchases</h1>
         <Link
-          to="/purchases/add"
+          to="/dashboard/purchases/add" 
           className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
         >
           <Plus className="w-4 h-4 mr-2" />
