@@ -49,8 +49,8 @@ const Reports = () => {
         case 'Products':   result = await productService.getAllProducts(); break;
         case 'Customers':  result = await customerService.getAllCustomers(); break;
         case 'Suppliers':  result = await supplierService.getAllSuppliers(); break;
-        case 'Purchases':  result = await purchaseService.getAllPurchases(); break;
-        case 'Sales':      result = await salesService.getAllSales(); break;
+        case 'Purchases':  result = await purchaseService.getPurchases(); break;
+        case 'Sales':      result = await salesService.getSales(); break;
         default: break;
       }
       setData(Array.isArray(result) ? result : []);
