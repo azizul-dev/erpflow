@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx';
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 import {
   LayoutDashboard,
   Package,
@@ -9,20 +9,20 @@ import {
   TrendingUp,
   FileText,
   LogOut,
-  X
-} from 'lucide-react';
+  X,
+} from "lucide-react";
 
 const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, toggleCollapse }) => {
   const { logout, user } = useAuth();
 
   const navItems = [
-    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-    { name: 'Products', path: "/products", icon: Package },
-    { name: 'Customers', path: "/customers", icon: Users },
-    { name: 'Suppliers', path: "/suppliers", icon: Truck },
-    { name: 'Purchases', path: "/purchases", icon: ShoppingCart },
-    { name: 'Sales', path: "/sales", icon: TrendingUp },
-    { name: 'Reports', path: "/reports", icon: FileText },
+    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+    { name: "Products", path: "/dashboard/products", icon: Package },
+    { name: "Customers", path: "/dashboard/customers", icon: Users },
+    { name: "Suppliers", path: "/dashboard/suppliers", icon: Truck },
+    { name: "Purchases", path: "/dashboard/purchases", icon: ShoppingCart },
+    { name: "Sales", path: "/dashboard/sales", icon: TrendingUp },
+    { name: "Reports", path: "/dashboard/reports", icon: FileText },
   ];
 
   return (
@@ -38,8 +38,8 @@ const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, toggleCollapse }) => {
       {/* Sidebar Container */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 flex flex-col border-r border-border bg-card text-card-foreground transition-all duration-300
-          ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          ${isCollapsed ? 'w-20' : 'w-64'}
+          ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+          ${isCollapsed ? "w-20" : "w-64"}
           lg:static lg:h-screen
         `}
       >
@@ -73,19 +73,20 @@ const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, toggleCollapse }) => {
               <NavLink
                 key={item.name}
                 to={item.path}
-                end={item.path === '/dashboard'}
+                end={item.path === "/dashboard"}
                 onClick={() => {
                   // Auto close mobile sidebar on nav
                   if (isOpen) toggleSidebar();
                 }}
                 className={({ isActive }) => `
                   flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 group
-                  ${isActive
-                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/10'
-                    : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                  ${
+                    isActive
+                      ? "bg-primary text-primary-foreground shadow-md shadow-primary/10"
+                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                   }
                 `}
-                title={isCollapsed ? item.name : ''}
+                title={isCollapsed ? item.name : ""}
               >
                 <Icon
                   size={20}
@@ -105,8 +106,12 @@ const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, toggleCollapse }) => {
                 {user.name.charAt(0).toUpperCase()}
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium leading-none text-foreground">{user.name}</p>
-                <p className="truncate text-xs text-muted-foreground mt-1">{user.role}</p>
+                <p className="truncate text-sm font-medium leading-none text-foreground">
+                  {user.name}
+                </p>
+                <p className="truncate text-xs text-muted-foreground mt-1">
+                  {user.role}
+                </p>
               </div>
             </div>
           )}
@@ -114,7 +119,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, toggleCollapse }) => {
           <button
             onClick={logout}
             className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors duration-200`}
-            title={isCollapsed ? 'Logout' : ''}
+            title={isCollapsed ? "Logout" : ""}
           >
             <LogOut size={20} />
             {!isCollapsed && <span>Logout</span>}
